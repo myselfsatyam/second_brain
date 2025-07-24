@@ -32,7 +32,7 @@ const HomePage = ()=>{
         return;
       }
 
-      const res = await fetch("http://localhost:4000/api/v1/content", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/content`, {
         method: "GET",
         headers: {
           "token": token
@@ -91,7 +91,7 @@ const HomePage = ()=>{
         return;
       }
 
-      const res = await fetch(`http://localhost:4000/api/v1/content`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/content`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const HomePage = ()=>{
       if (res.ok) {
         // Encode your data as a query parameter
         const encodedData = encodeURIComponent(JSON.stringify(jsonData.data));
-        const shareLink = `http://localhost:5173/share/${userId}?data=${encodedData}`;
+        const shareLink = `${window.location.origin}/share/${userId}?data=${encodedData}`;
        
         navigator.clipboard.writeText(shareLink)
         .then(() => {

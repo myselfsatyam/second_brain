@@ -95,7 +95,7 @@ const Card = (props: CardProps) => {
         return;
       }
 
-      const res = await fetch(`http://localhost:4000/api/v1/delete/${props.title}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/delete/${props.title}`, {
         method: "Delete",
         headers: {
           "token": token

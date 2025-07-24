@@ -36,7 +36,7 @@ const Modal = (props: {onClick: () => void,setModal: (value: boolean) => void, s
         return;
       }
 
-      await fetch("http://localhost:4000/api/v1/addcontent", {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/v1/addcontent`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
