@@ -13,7 +13,6 @@ console.log("Loaded HF_API_KEY:", process.env.HF_API_KEY ? "Present" : "Missing"
 
 // Allow both local and Vercel frontend
 const allowedOrigins = [
-  "http://localhost:5173",
   "https://second-brain-three-iota.vercel.app"
 ];
 
